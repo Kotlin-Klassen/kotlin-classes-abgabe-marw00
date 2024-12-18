@@ -4,32 +4,32 @@ fun main() {
     // Create a Library instance
     val library = Library()
 
-    // Add a Library Address
-    val address = Library.LibraryAddress("123 Main St", "Booktown", "12345")
+    // Add a library address
+    val address = Library.LibraryAddress("456 Marien", "Novel City", "67890")
     address.printAddress()
 
     // Add books to the library
-    library.addBook(Book("1984", "George Orwell", Genre.FICTION))
-    library.addBook(Book("A Brief History of Time", "Stephen Hawking", Genre.SCIENCE))
-    library.addBook(Book("The Diary of a Young Girl", "Anne Frank", Genre.HISTORY))
-    library.addBook(Book("Harry Potter", "J.K. Rowling", Genre.CHILDREN))
+    library.addBook(Book("The Great Gatsby", "F. Scott Fitzgerald", Genre.SCIENCE))
+    library.addBook(Book("Sapiens", "Yuval Noah Harari", Genre.NON_FICTION))
+    library.addBook(Book("The Catcher in the Rye", "J.D. Salinger", Genre.FICTION))
+    library.addBook(Book("Percy Jackson", "Rick Riordan", Genre.HISTORY))
 
-    // Create a Library Member
-    val member = library.LibraryMember("Alice", "M001")
+    // Create a library member
+    val member = library.LibraryMember("Maria", "02")
 
     // Member checks out a book
-    val bookToCheckout = library.searchBooks("1984").firstOrNull()
+    val bookToCheckout = library.searchBooks("The Great Gatsby").firstOrNull()
     if (bookToCheckout != null) {
-        member.checkoutBook(bookToCheckout, "2024-12-20")
+        member.checkoutBook(bookToCheckout, "2024-12-25")
     }
 
     // Member reserves a book
-    val bookToReserve = library.searchBooks("Harry Potter").firstOrNull()
+    val bookToReserve = library.searchBooks("Percy Jackson").firstOrNull()
     if (bookToReserve != null) {
         member.reserveBook(bookToReserve)
     }
 
     // Display the status of all books
-    println("\nBook Statuses:")
+    println("\nBook statuses:")
     library.displayBookStatuses()
 }

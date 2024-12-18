@@ -70,10 +70,17 @@ class Library {
      * @param query The search keyword.
      * @return A list of books matching the search criteria.
      */
-    fun searchBooks(query: String): List<Book> {
-        return books.filter {
-            it.title.contains(query, ignoreCase = true) || it.author.contains(query, ignoreCase = true)
+    fun searchBooks(criteria: String): List<Book> {
+        val results = books.filter {
+            it.title.contains(criteria, ignoreCase = true) ||
+                    it.author.contains(criteria, ignoreCase = true)
         }
+
+        if (results.isEmpty()) {
+            println("No books found matching the search criteria.")
+        }
+
+        return results
     }
 
     /**

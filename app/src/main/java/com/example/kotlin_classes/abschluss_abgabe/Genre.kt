@@ -7,11 +7,11 @@ package com.example.kotlin_classes.abschluss_abgabe
  * @property description A brief explanation of the genre.
  */
 enum class Genre(val description: String) {
-    FICTION("Fictional stories and novels"),
-    NON_FICTION("Non-fictional works based on facts"),
-    SCIENCE("Books about scientific topics"),
-    HISTORY("Books about historical events"),
-    CHILDREN("Books for children");
+    FICTION("Imaginative and creative stories, including novels"),
+    NON_FICTION("Informative works based on real events and facts"),
+    SCIENCE("Detailed explorations of scientific topics and discoveries"),
+    HISTORY("Insights into past events and historical narratives"),
+    CHILDREN("Entertaining and educational books for young readers");
 
     /**
      * Prints the name and description of the genre to the console.
